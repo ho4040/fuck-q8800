@@ -2,18 +2,32 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>FUCK YOU Q8800!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <h1>15분에 한번씩 틱거리는 병신프로그램</h1>
+    <p>이 프로그램은 15분에 한번씩 병신같은 소리를 내주는 프로그램 입니다. MGTEC 에서 만든 Q8800 이라는 스피커가 자동절전모드가 무조건 활성화 되어 있어서 강의보다 똥싸러 가면 스피커 꺼져서 매우 빡이 치기에 프로그램을 만들어둡니다.</p>
 
+    <p>창을 닫으면 트레이아이콘 영역으로 들어가서 계속 병신같은 소리를 냅니다.</p>
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
+
+      var audio = new Audio('sound.wav');
+      function tick(){
+        audio.volume = 0.005;
+        audio.play();
+      }
+      function onTimer(){ 
+        tick()
+        console.log("onTimer")
+        window.setTimeout(onTimer, 1000*15*60);
+      }
+      onTimer()
     </script>
+
+    <button onclick="tick()">병신같은틱소리</button>
+
+    
   </body>
 </html>
