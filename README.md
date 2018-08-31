@@ -1,3 +1,7 @@
+![a](https://i.imgur.com/k3RH8uW.png)
+
+---
+
 # electron-quick-start
 
 **Clone and run for a quick way to see Electron in action.**
